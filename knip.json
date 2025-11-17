@@ -1,0 +1,14 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignoreExportsUsedInFile": {
+    "interface": true,
+    "type": true
+  },
+  "tags": ["-lintignore"],
+  "workspaces": {
+    "packages/*": {
+      "project": ["src/**/*.{js,ts,tsx}!", "!src/adapters/**/test/.tmp"]
+    }
+  },
+  "ignoreWorkspaces": ["demo/**", "docs/**", "e2e/**"]
+}
