@@ -25,7 +25,7 @@
     "@types/bun": "^1.3.1",
     "@types/node": "^24.9.2",
     "bumpp": "^10.3.1",
-    "knip": "^5.69.1",
+    "knip": "^5.70.0",
     "tinyglobby": "^0.2.15",
     "turbo": "^2.6.1",
     "typescript": "catalog:",

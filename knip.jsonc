@@ -1,0 +1,55 @@
+{
+	"$schema": "https://unpkg.com/knip@5/schema-jsonc.json",
+	"ignoreExportsUsedInFile": {
+		"interface": true,
+		"type": true
+	},
+	"ignoreIssues": {
+		"**": ["exports", "types", "duplicates"]
+	},
+	"tags": ["-lintignore"],
+	"workspaces": {
+		"packages/*": {
+			"entry": ["src/index.ts"],
+			"project": [
+				"src/**/*.ts!",
+				"!src/adapters/**/test/.tmp",
+				"!src/adapters/**/test/auth.ts"
+			]
+		},
+		"packages/better-auth": {
+			"project": [
+				"src/**/*.ts!",
+				"!src/adapters/**/test/.tmp",
+				"!src/adapters/**/test/auth.ts"
+			],
+			"ignoreDependencies": [
+				// implicit adapter dependencies
+				"drizzle-kit",
+				"drizzle-orm",
+				"mongodb",
+
+				// implicit test-instance dependencies
+				"vitest",
+        "pg",
+        "better-sqlite3",
+        "mysql2",
+
+				// implicit integration dependencies
+				"@lynx-js/react",
+				"@sveltejs/kit",
+				"@tanstack/start-server-core",
+				"next",
+				"react",
+				"react-dom",
+				"solid-js",
+				"svelte",
+				"vue"
+			]
+		}
+	},
+	"vitest": {
+		"entry": ["**/*.test.ts"]
+	},
+	"ignoreWorkspaces": ["demo/**", "docs/**", "e2e/**"]
+}
