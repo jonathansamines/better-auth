@@ -7,7 +7,8 @@
   "tags": ["-lintignore"],
   "workspaces": {
     "packages/*": {
-      "project": ["src/**/*.{js,ts,tsx}!", "!src/adapters/**/test/.tmp"]
+      "entry": ["src/index.ts"],
+      "project": ["src/**/*.ts!", "!src/adapters/**/test/.tmp", "!src/adapters/**/test/auth.ts"]
     }
   },
   "ignoreWorkspaces": ["demo/**", "docs/**", "e2e/**"]
