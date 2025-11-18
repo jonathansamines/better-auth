@@ -60,7 +60,12 @@
 		}
 	},
 	"vitest": {
-		"project": ["**/test/**/*.ts", "**/tests/**/*.ts", "**/*test*.ts"],
+		"project": [
+			"**/test/**/*.ts",
+			"**/tests/**/*.ts",
+			"**/*test*.ts",
+			"**/*.prisma"
+		],
 		"entry": ["**/*.test.ts"]
 	},
 	"ignoreWorkspaces": ["demo/**", "docs/**", "e2e/**"]
