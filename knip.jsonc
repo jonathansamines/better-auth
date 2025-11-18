@@ -46,6 +46,17 @@
 				"svelte",
 				"vue"
 			]
+		},
+		"packages/cli": {
+			"ignoreDependencies": [
+				// implicit adapter dependencies
+				"better-sqlite3",
+				"@prisma/client",
+				"@types/pg",
+				"drizzle-orm",
+				"pg",
+				"prisma"
+			]
 		}
 	},
 	"vitest": {
