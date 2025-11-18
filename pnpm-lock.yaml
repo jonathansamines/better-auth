@@ -44,7 +44,7 @@ importers:
         specifier: ^10.3.1
         version: 10.3.1(magicast@0.3.5)
       knip:
-        specifier: ^5.70.0
+        specifier: ^5.70.1
         version: 5.70.1(@types/node@24.9.2)(typescript@5.9.3)
       tinyglobby:
         specifier: ^0.2.15
@@ -18065,9 +18065,7 @@ snapshots:
       metro-runtime: 0.83.3
     transitivePeerDependencies:
       - '@babel/core'
-      - bufferutil
       - supports-color
-      - utf-8-validate
     optional: true
 
   '@react-native/normalize-colors@0.74.89': {}

@@ -57,6 +57,17 @@
 				"pg",
 				"prisma"
 			]
+		},
+		"packages/expo": {
+			"ignoreDependencies": [
+				// loading of optional peers
+				"expo-constants",
+				"expo-linking",
+				"expo-web-browser",
+
+				// implicit dependencies
+				"react-native"
+			]
 		}
 	},
 	"vitest": {
@@ -66,7 +77,7 @@
 			"**/*test*.ts",
 			"**/*.prisma"
 		],
-		"entry": ["**/*.test.ts"]
+		"entry": ["**/*.test.ts", "**/*.spec.ts"]
 	},
 	"ignoreWorkspaces": ["demo/**", "docs/**", "e2e/**"]
 }
