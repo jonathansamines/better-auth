@@ -31,9 +31,9 @@
 
 				// implicit test-instance dependencies
 				"vitest",
-        "pg",
-        "better-sqlite3",
-        "mysql2",
+				"pg",
+				"better-sqlite3",
+				"mysql2",
 
 				// implicit integration dependencies
 				"@lynx-js/react",
@@ -49,6 +49,7 @@
 		}
 	},
 	"vitest": {
+		"project": ["**/test/**/*.ts", "**/tests/**/*.ts", "**/*test*.ts"],
 		"entry": ["**/*.test.ts"]
 	},
 	"ignoreWorkspaces": ["demo/**", "docs/**", "e2e/**"]
