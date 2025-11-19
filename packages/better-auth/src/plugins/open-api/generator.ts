@@ -1,4 +1,8 @@
-import type { AuthContext, BetterAuthOptions } from "@better-auth/core";
+import type {
+	AuthContext,
+	AuthEndpointOptions,
+	BetterAuthOptions,
+} from "@better-auth/core";
 import type {
 	DBFieldAttribute,
 	DBFieldAttributeConfig,
@@ -6,7 +10,6 @@ import type {
 } from "@better-auth/core/db";
 import type {
 	Endpoint,
-	EndpointOptions,
 	OpenAPIParameter,
 	OpenAPISchemaType,
 } from "better-call";
@@ -118,7 +121,7 @@ function getFieldSchema(field: DBFieldAttribute) {
 	return schema;
 }
 
-function getParameters(options: EndpointOptions) {
+function getParameters(options: AuthEndpointOptions) {
 	const parameters: OpenAPIParameter[] = [];
 	if (options.metadata?.openapi?.parameters) {
 		parameters.push(...options.metadata.openapi.parameters);
@@ -145,7 +148,7 @@ function getParameters(options: EndpointOptions) {
 	return parameters;
 }
 
-function getRequestBody(options: EndpointOptions): any {
+function getRequestBody(options: AuthEndpointOptions): any {
 	if (options.metadata?.openapi?.requestBody) {
 		return options.metadata.openapi.requestBody;
 	}
@@ -395,7 +398,7 @@ export async function generator(ctx: AuthContext, options: BetterAuthOptions) {
 
 	Object.entries(baseEndpoints.api).forEach(([_, value]) => {
 		if (ctx.options.disabledPaths?.includes(value.path)) return;
-		const options = value.options as EndpointOptions;
+		const options = value.options as AuthEndpointOptions;
 		if (options.metadata?.SERVER_ONLY) return;
 		const path = toOpenApiPath(value.path);
 		if (options.method === "GET" || options.method === "DELETE") {
@@ -475,7 +478,7 @@ export async function generator(ctx: AuthContext, options: BetterAuthOptions) {
 			.filter((x) => x !== null) as Endpoint[];
 		Object.entries(api).forEach(([key, value]) => {
 			if (ctx.options.disabledPaths?.includes(value.path)) return;
-			const options = value.options as EndpointOptions;
+			const options = value.options as AuthEndpointOptions;
 			if (options.metadata?.SERVER_ONLY) return;
 			const path = toOpenApiPath(value.path);
 			if (options.method === "GET" || options.method === "DELETE") {

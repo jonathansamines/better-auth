@@ -1,6 +1,7 @@
 import type {
 	Endpoint,
 	EndpointContext,
+	EndpointOptions,
 	InputContext,
 	Middleware,
 } from "better-call";
@@ -27,6 +28,12 @@ export type HookEndpointContext = Partial<
 		responseHeaders?: Headers | undefined;
 	};
 	headers?: Headers | undefined;
+};
+
+export type AuthEndpointOptions = EndpointOptions & {
+	metadata?: {
+		isAction?: boolean;
+	};
 };
 
 export type BetterAuthPlugin = {

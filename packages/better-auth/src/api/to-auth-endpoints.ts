@@ -1,4 +1,8 @@
-import type { AuthContext, HookEndpointContext } from "@better-auth/core";
+import type {
+	AuthContext,
+	AuthEndpointOptions,
+	HookEndpointContext,
+} from "@better-auth/core";
 import type { AuthEndpoint, AuthMiddleware } from "@better-auth/core/api";
 import {
 	hasRequestState,
@@ -6,11 +10,7 @@ import {
 	runWithRequestState,
 } from "@better-auth/core/context";
 import { shouldPublishLog } from "@better-auth/core/env";
-import type {
-	EndpointContext,
-	EndpointOptions,
-	InputContext,
-} from "better-call";
+import type { EndpointContext, InputContext } from "better-call";
 import { APIError, toResponse } from "better-call";
 import { createDefu } from "defu";
 
@@ -46,7 +46,7 @@ export function toAuthEndpoints<
 			context: EndpointContext<string, any> & InputContext<string, any>,
 		) => Promise<any>) & {
 			path?: string | undefined;
-			options?: EndpointOptions | undefined;
+			options?: AuthEndpointOptions | undefined;
 		}
 	> = {};
 

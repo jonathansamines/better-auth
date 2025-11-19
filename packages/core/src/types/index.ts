@@ -12,7 +12,11 @@ export type {
 	BetterAuthRateLimitOptions,
 	GenerateIdFn,
 } from "./init-options";
-export type { BetterAuthPlugin, HookEndpointContext } from "./plugin";
+export type {
+	AuthEndpointOptions,
+	BetterAuthPlugin,
+	HookEndpointContext,
+} from "./plugin";
 export type {
 	BetterAuthClientOptions,
 	BetterAuthClientPlugin,
