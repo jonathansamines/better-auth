@@ -63,6 +63,7 @@
 			"ignoreDependencies": [
 				// loading of optional peers
 				"expo-constants",
+				"expo-network",
 				"expo-linking",
 				"expo-web-browser",
 
