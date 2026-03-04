@@ -375,7 +375,9 @@ Most of the features of Better Auth will not work correctly.`,
 		runInBackground:
 			options.advanced?.backgroundTasks?.handler ??
 			((p) => {
-				p.catch(() => {});
+				p.catch((e) => {
+					logger.warn("Failed to run background task:", e);
+				});
 			}),
 		async runInBackgroundOrAwait(
 			promise: Promise<unknown> | Promise<void> | void | unknown,
